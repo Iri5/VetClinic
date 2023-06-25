@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Nunito";
   font-weight: 400;
@@ -81,6 +82,19 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: #00194E;
+}
+
+.title {
+  background: url(../img/плашка.svg) no-repeat;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  padding: 5vw;
 }
 
 .sign {
@@ -91,7 +105,7 @@ header {
   justify-content: end;
 }
 .sign img {
-  margin-bottom: -20px;
+  margin-bottom: -10px;
 }
 .sign button {
   z-index: -1;
