@@ -16,6 +16,12 @@
     font-style: normal;
     src: url('../fonts/static/Nunito-Bold.ttf');
 }
+@mixin flexParDJC($jccenter : center, $row : row,){
+    display: flex;
+    flex-direction: $row;
+    justify-content: $jccenter;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,15 +38,12 @@ $contentSize: 90vw;
 header{
 	background: $light;
     width: 100vw;
-    display: flex;
-    justify-content: center;
+    @include flexParDJC();
 }
 .header{
     width: $contentSize;
     font-size: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flexParDJC(space-between);
     align-items: center;
     a {
         text-decoration: none;
@@ -66,8 +69,7 @@ column-gap: 2vw;
 .first_screen{
     
     margin-top: 50px;
-    display: flex;
-    justify-content: center;
+    @include flexParDJC( );
 }
 .first{
     width: $contentSize;
@@ -77,28 +79,23 @@ column-gap: 2vw;
 }
 .label{
     width: 60%;
-    display: flex;
-    flex-direction: column;
+    @include flexParDJC(space-between, column);
+    
     align-items: center;
-    justify-content: space-between;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
     font-size: 32px;
     color: $primary;
 }
 .title{
     background: url(../img/плашка.svg) no-repeat;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
+    
     font-size: 60px;
     padding: 5vw;
 }
 .sign{
     width: 40%;
-    display: flex;
-    flex-direction: column;
+    @include flexParDJC(end, column);
+
     align-items: center;
-    justify-content: end;
     img{
         margin-bottom: -10px;
     }
@@ -110,8 +107,19 @@ column-gap: 2vw;
         border: none;
         background-color: $primary;
         color: white;
-        font-family: 'Nunito', sans-serif;
-        font-weight: 400;
+       
         font-size: 40px;
+    }
+}
+
+.description {
+color: red;
+    .title {
+        font-weight: 700;
+        font-size: 40px;
+    }
+    .text {
+        font-weight: 500;
+        font-size: 32px;
     }
 }
