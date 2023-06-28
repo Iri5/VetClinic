@@ -29,7 +29,9 @@
   font-family: 'Nunito', sans-serif;
     font-weight: 400;
 }
-
+body{
+    max-width: 100%;
+}
 $primary: #00194E;
 $mainFont: #2D2E3A;
 $light: #72DEDE;
@@ -37,7 +39,7 @@ $contentSize: 90vw;
 
 header{
 	background: $light;
-    width: 100vw;
+    width: 100%;
     @include flexParDJC();
 }
 .header{
@@ -113,8 +115,10 @@ column-gap: 2vw;
 }
 
 .description {
-color: red;
-    .title {
+    //background:  url("../img/фон\ паралакс.png") no-repeat;
+    position: relative;
+color: white;
+    .title1 {
         font-weight: 700;
         font-size: 40px;
     }
@@ -122,9 +126,15 @@ color: red;
         font-weight: 500;
         font-size: 32px;
     }
-    img{
+    .img{
+        background: url("../img/фон\ паралакс.png");
         width: 100%;
-        max-width: 100%;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
         z-index: -1;
     }
 }
