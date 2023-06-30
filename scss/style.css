@@ -75,6 +75,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-bottom: 10vh;
 }
 
 .first {
@@ -121,25 +122,35 @@ header {
 }
 
 .description {
+  box-shadow: inset 0 20px 20px -20px black, inset 0 -20px 20px -20px black;
+  background: url("../img/фон паралакс.png");
+  height: 500px;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 60px;
+  align-items: center;
   position: relative;
   color: white;
 }
+.description .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
 .description .title1 {
+  z-index: 3;
   font-weight: 700;
   font-size: 40px;
 }
 .description .text {
+  z-index: 3;
   font-weight: 500;
   font-size: 32px;
-}
-.description .img {
-  background: url("../img/фон паралакс.png");
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }/*# sourceMappingURL=style.css.map */

@@ -1,107 +1,127 @@
-@font-face{
+@font-face {
     font-family: 'Nunito';
     font-weight: 400;
     font-style: normal;
     src: url('../fonts/static/Nunito-Regular.ttf');
 }
-@font-face{
+
+@font-face {
     font-family: 'Nunito';
     font-weight: 500;
     font-style: normal;
     src: url('../fonts/static/Nunito-Medium.ttf');
 }
-@font-face{
+
+@font-face {
     font-family: 'Nunito';
     font-weight: 700;
     font-style: normal;
     src: url('../fonts/static/Nunito-Bold.ttf');
 }
-@mixin flexParDJC($jccenter : center, $row : row,){
+
+@mixin flexParDJC($jccenter : center, $row : row, ) {
     display: flex;
     flex-direction: $row;
     justify-content: $jccenter;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;  
-  font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
     font-weight: 400;
 }
-body{
+
+body {
     max-width: 100%;
 }
+
 $primary: #00194E;
 $mainFont: #2D2E3A;
 $light: #72DEDE;
 $contentSize: 90vw;
 
-header{
-	background: $light;
+header {
+    background: $light;
     width: 100%;
     @include flexParDJC();
 }
-.header{
+
+.header {
     width: $contentSize;
     font-size: 20px;
     @include flexParDJC(space-between);
     align-items: center;
+
     a {
         text-decoration: none;
         color: $primary;
         align-items: center;
     }
 }
+
 .menu-items {
     display: flex;
     column-gap: 5vw;
     align-items: center;
     list-style: none;
-    li{
+
+    li {
         text-transform: uppercase;
         font-weight: 400;
         line-height: 120%;
+    }
 }
+
+.header__contacts {
+    display: flex;
+    column-gap: 2vw;
 }
-.header__contacts{
-display: flex;
-column-gap: 2vw;
-}
-.first_screen{
-    
+
+.first_screen {
+
     margin-top: 50px;
-    @include flexParDJC( );
+    @include flexParDJC();
+    padding-bottom: 10vh;
+    
+    
 }
-.first{
+
+.first {
     width: $contentSize;
     display: flex;
     flex-direction: row;
-    
+
 }
-.label{
+
+.label {
     width: 60%;
     @include flexParDJC(space-between, column);
-    
+
     align-items: center;
     font-size: 32px;
     color: $primary;
 }
-.title{
+
+.title {
     background: url(../img/плашка.svg) no-repeat;
-    
+
     font-size: 60px;
     padding: 5vw;
 }
-.sign{
+
+.sign {
     width: 40%;
     @include flexParDJC(end, column);
 
     align-items: center;
-    img{
+
+    img {
         margin-bottom: -10px;
     }
-    button{
+
+    button {
         z-index: -1;
         height: 90px;
         width: 300px;
@@ -109,32 +129,43 @@ column-gap: 2vw;
         border: none;
         background-color: $primary;
         color: white;
-       
+
         font-size: 40px;
     }
 }
 
 .description {
-    //background:  url("../img/фон\ паралакс.png") no-repeat;
+    box-shadow: inset 0 20px 20px  -20px black , inset 0 -20px 20px  -20px black;
+    background: url("../img/фон\ паралакс.png");
+    height: 500px;
+    background-attachment: fixed;
+    @include flexParDJC( );
+    flex-direction: column;
+    font-size: 60px;
+    align-items: center;
     position: relative;
-color: white;
+    color: white;
+
+    .mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .6);
+        z-index: 2;
+    }
+
     .title1 {
+        z-index: 3;
         font-weight: 700;
         font-size: 40px;
     }
+
     .text {
+        z-index: 3;
         font-weight: 500;
         font-size: 32px;
+        padding-left: 5vw;
+        padding-right: 5vw;
     }
-    .img{
-        background: url("../img/фон\ паралакс.png");
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: -1;
-    }
+
 }
